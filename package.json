@@ -1,0 +1,28 @@
+{
+  "name": "simple-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "npx nodemon",
+    "clean": "rm -rf ./build",
+    "build": "npm run clean && tsc",
+    "start": "npm run build && node build/app.js",
+    "package": "docker build -t express-app -f Dockerfile_app ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.14",
+    "@types/node": "^18.11.11",
+    "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  }
+}

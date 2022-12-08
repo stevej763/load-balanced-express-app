@@ -1,0 +1,41 @@
+networks:
+  express-app: {}
+
+services:
+
+  load-balancer:
+    image: express-lb
+    container_name: express-lb
+    networks:
+      - express-app
+    ports:
+      - 80:80
+
+  app-1:
+    image: simple-express
+    container_name: app-1
+    networks:
+      - express-app
+
+  app-2:
+    image: simple-express
+    container_name: app-2
+    networks:
+      - express-app
+  app-3:
+    image: simple-express
+    container_name: app-3
+    networks:
+      - express-app
+
+  app-4:
+    image: simple-express
+    container_name: app-4
+    networks:
+      - express-app
+
+  app-5:
+    image: simple-express
+    container_name: app-5
+    networks:
+      - express-app
